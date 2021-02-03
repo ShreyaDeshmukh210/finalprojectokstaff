@@ -1,0 +1,26 @@
+package com.example.demo.repository;
+
+
+import java.util.Date;
+
+import javax.transaction.Transactional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import com.example.demo.entities.Payslip;
+@Repository
+public interface PaySlipRepository extends JpaRepository<Payslip,Integer>{
+
+	@Transactional
+	@Modifying
+	@Query(value="insert into payslip (payslip_workingdays, payslip_emp_id, payslip_date, payslip_salary) "
+			+ "values(:wday,:empid,:date,:salary)",nativeQuery = true)
+    public void setpayslip(@Param("empid")Integer empid,@Param("wday")int wday,@Param("date")Date date,@Param("salary")float salary);
+	
+	
+	@Query(value="select * from payslip where payslip_emp_id=:empid ",nativeQuery = true)
+	public Payslip getPayslip(@Param("empid")Integer empid);
+}

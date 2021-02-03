@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="car-header">
+        <h4>List of Spare Parts</h4>
+    </div>
+    <div class="card-body">
+        <table class="table table-stripped table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Spare Id</th>
+                    <th>Company Name</th>
+                    <th>Part Name</th>
+                    <th>Price</th>
+                    <th>Warranty</th>
+                    <th>Actions</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <tr *ngFor="let sparepart of spareparts; let index = index">
+                    <td>{{index + 1}}</td>
+                    <td>{{customer['spare_id']}}</td>
+                    <td>{{customer['company_name']}}</td>
+                    <td>{{customer['part_name']}}</td>
+                    <td>{{customer['price']}}</td>
+                    <td>{{customer['warranty']}}</td>
+                    <td></td>
+                    <td>
+                        <button (click)="onEdit(sparepart)" class="btn btn-success btn-sm">Edit</button>
+                        <button style="margin-left: 10px" class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

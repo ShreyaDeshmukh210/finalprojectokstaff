@@ -1,0 +1,44 @@
+<div class="container">
+<form #f = "ngForm">
+    <div class="form-group">
+
+        <label for="emp_id">Employee Id:</label>
+        <input type="text" class="form-control" name="emp_id" id="emp_id" #emp_id [(ngModel)] = "empdetails.emp_id" required>
+        <button class= btn-primary (click)= "getEmployeeById(emp_id.value)">Search All</button>
+    </div>
+    <div>
+        <label for="emp_id">Employee Id:</label>
+        <input type="text" class="form-control" name="empid" id="empid"  [(ngModel)] = "empdetails.emp_id" disabled >
+    </div>
+    <div>
+        <div >
+            <label for="emp_fname"> First Name : </label>
+            <input type="text" class="form-control" name="emp_fname" id="emp_fname" #emp_fname [(ngModel)] = "empdetails.emp_fname">
+        </div>
+            <div>
+            <label for="emp_mname"> Middle Name : </label>
+            <input type="text" class="form-control" name="emp_mname" id="emp_mname" #emp_lname [(ngModel)] = "empdetails.emp_mname">
+        </div>
+        <div >
+            <label for="emp_lname"> Last Name : </label>
+            <input type="text" class="form-control" name="emp_lname" id="emp_lname" #emp_lname [(ngModel)] = "empdetails.emp_lname">
+        </div>
+            <div >
+            <label for="emp_address"> Address :</label>
+            <input type="text" class="form-control" name="emp_address" id="emp_address" #emp_address [(ngModel)] = "empdetails.emp_address">
+        </div>
+        <div>
+            <label for="emp_contactno"> Contact Number : </label>
+            <input type="text" class="form-control" name="emp_contactno" id="emp_contactno" #emp_contactno [(ngModel)] = "empdetails.emp_contactno">
+        </div>
+            <div >
+            <label for="emp_securityque"> Security Question : </label>
+            <input type="text" class="form-control" name="emp_securityque" id="emp_securityque" #emp_securityque [(ngModel)] = "empdetails.emp_securityque">
+            </div>
+        
+    </div>
+
+
+        <button class="btn btn-primary" (click)="updateProfile(empdetails)">Update</button>
+</form>
+</div>

@@ -1,0 +1,240 @@
+package com.example.demo.entities;
+
+
+import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+@Entity
+@Table(name = "employee")
+public class Employee 
+{
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private	int emp_id;
+	
+	
+	@ManyToOne
+	@JoinColumn (name = "emp_designation")
+	LeaveMaster leavemaster;
+	
+	
+	@ManyToOne
+	@JoinColumn (name = "emp_department_id")
+    Department department;
+	
+	@Column
+	private String emp_password;
+	
+	@Column
+	private String emp_fname;
+	
+	@Column
+	private String emp_mname;
+	
+	@Column
+	private String emp_lname;
+	
+	@Column
+	private String emp_contactno;
+	
+	@Column
+	private String emp_emailid;
+	
+	@Column
+	private String emp_address;
+	
+	@Column
+	private String emp_aadharcard;
+	
+	@Column
+	private String emp_photo;
+	
+	
+	@Column
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date emp_dob;
+	
+	
+	@Column
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date emp_doj;
+	
+	@Column
+	private String emp_auth_status;
+	
+	@Column
+	private String emp_securityque;
+	
+	@Column
+	private int emp_manager_id;
+	
+	public Employee()
+	{
+		super();	
+	}
+
+	public int getEmp_id() {
+		return emp_id;
+	}
+
+	public void setEmp_id(int emp_id) {
+		this.emp_id = emp_id;
+	}
+
+
+	public LeaveMaster getLeavemaster() {
+		return leavemaster;
+	}
+
+	public void setLeavemaster(LeaveMaster leavemaster) {
+		this.leavemaster = leavemaster;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	public String getEmp_password() {
+		return emp_password;
+	}
+
+	public void setEmp_password(String emp_password) {
+		this.emp_password = emp_password;
+	}
+
+	public String getEmp_fname() {
+		return emp_fname;
+	}
+
+	public void setEmp_fname(String emp_fname) {
+		this.emp_fname = emp_fname;
+	}
+
+	public String getEmp_mname() {
+		return emp_mname;
+	}
+
+	public void setEmp_mname(String emp_mname) {
+		this.emp_mname = emp_mname;
+	}
+
+	public String getEmp_lname() {
+		return emp_lname;
+	}
+
+	public void setEmp_lname(String emp_lname) {
+		this.emp_lname = emp_lname;
+	}
+
+	public String getEmp_contactno() {
+		return emp_contactno;
+	}
+
+	public void setEmp_contactno(String emp_contactno) {
+		this.emp_contactno = emp_contactno;
+	}
+
+	public String getEmp_emailid() {
+		return emp_emailid;
+	}
+
+	public void setEmp_emailid(String emp_emailid) {
+		this.emp_emailid = emp_emailid;
+	}
+
+	public String getEmp_address() {
+		return emp_address;
+	}
+
+	public void setEmp_address(String emp_address) {
+		this.emp_address = emp_address;
+	}
+
+	public String getEmp_aadharcard() {
+		return emp_aadharcard;
+	}
+
+	public void setEmp_aadharcard(String emp_aadharcard) {
+		this.emp_aadharcard = emp_aadharcard;
+	}
+
+	public String getEmp_photo() {
+		return emp_photo;
+	}
+
+	public void setEmp_photo(String emp_photo) {
+		this.emp_photo = emp_photo;
+	}
+
+	
+
+	public LocalDate getEmp_dob() {
+		return emp_dob;
+	}
+
+	public void setEmp_dob(LocalDate emp_dob) {
+		this.emp_dob = emp_dob;
+	}
+
+	public LocalDate getEmp_doj() {
+		return emp_doj;
+	}
+
+	public void setEmp_doj(LocalDate emp_doj) {
+		this.emp_doj = emp_doj;
+	}
+
+	public String getEmp_auth_status() {
+		return emp_auth_status;
+	}
+
+	public void setEmp_auth_status(String emp_auth_status) {
+		this.emp_auth_status = emp_auth_status;
+	}
+
+	public String getEmp_securityque() {
+		return emp_securityque;
+	}
+
+	public void setEmp_securityque(String emp_securityque) {
+		this.emp_securityque = emp_securityque;
+	}
+
+	public int getEmp_manager_id() {
+		return emp_manager_id;
+	}
+
+	public void setEmp_manager_id(int emp_manager_id) {
+		this.emp_manager_id = emp_manager_id;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [emp_id=" + emp_id + ", leavemaster=" + leavemaster + ", department=" + department
+				+ ", emp_password=" + emp_password + ", emp_fname=" + emp_fname + ", emp_mname=" + emp_mname
+				+ ", emp_lname=" + emp_lname + ", emp_contactno=" + emp_contactno + ", emp_emailid=" + emp_emailid
+				+ ", emp_address=" + emp_address + ", emp_aadharcard=" + emp_aadharcard + ", emp_photo=" + emp_photo
+				+ ", emp_dob=" + emp_dob + ", emp_doj=" + emp_doj + ", emp_auth_status=" + emp_auth_status
+				+ ", emp_securityque=" + emp_securityque + ", emp_manager_id=" + emp_manager_id + "]";
+	}
+
+	
+
+}
+	
+
+
+	
+

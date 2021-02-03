@@ -1,0 +1,147 @@
+
+<!--app-login></</div>app-login-->
+<form #r="ngForm" (ngSubmit) = register(empdetails)>
+        <div class= "container">
+            <h3>Registration Form</h3>
+            <div class="form-group" >
+                    <div>
+                    <label for="emp_fname"> First Name : </label>
+                    <input type="text" class="form-control" name="emp_fname" id="emp_fname" #emp_fname [(ngModel)] = "empdetails.emp_fname">
+                    </div>
+                
+               
+                    <div>
+                    <label for="emp_lname"> Last Name : </label>
+                    <input type="text" class="form-control" name="emp_lname" id="emp_lname" #emp_lname [(ngModel)] = "empdetails.emp_lname">
+                    </div>
+               
+                    <div>
+                    <label for="emp_designation"> Designation : </label>
+                    <input type="text" class="form-control" name="emp_designation" id="emp_designation" #emp_designation [(ngModel)] = "empdetails.emp_designation">
+                    </div>
+                
+                    <div>
+                        <label for="emp_password"> Password : </label>
+                        <input type="text" class="form-control"  name="emp_password" id="emp_password" #emp_password [(ngModel)] = "empdetails.emp_password" required minlength="6">
+                        <div *ngIf="r.submitted && emp_password.invalid">
+                            <div *ngIf="emp_password.errors.required">
+                                Password is compulsory.
+                            </div>
+                            <div *ngIf="emp_password.errors.minlength">
+                                Min length is 3 charractor.
+                            </div>
+                        </div>   
+                     </div>
+
+
+
+                    <div>
+                    <label for="emp_contactno"> Contact Number : </label>
+                    <input type="text" class="form-control" name="emp_contactno" id="emp_contactno" #emp_contactno [(ngModel)] = "empdetails.emp_contactno">
+                    </div>
+
+                    <div>
+                    <label for="emp_emailid"> Email ID : </label>
+                    <input type="text"class="form-control"  name="emp_emailid" id="emp_emailid" #emp_emailid [(ngModel)] = "empdetails.emp_emailid">
+                    </div>
+
+                    <div>
+                    <label for="emp_address">Address : </label>
+                    <input type="text" class="form-control" name="emp_address" id="emp_address" #emp_address [(ngModel)] = "empdetails.emp_address">
+                    </div>
+
+
+                    <div>
+                    <label for="emp_aadharcard"> Aadhar Card : </label>
+                    <input type="text" class="form-control" name="emp_aadharcard" id="emp_aadharcard" #emp_addharcard [(ngModel)] = "empdetails.emp_aadharcard">
+                    </div>
+                
+                
+                
+                
+                    <div>
+                    <label for="emp_photo"> Photo : </label>
+                    <input type="text" class="form-control" name="emp_photo" id="emp_photo" #emp_photo [(ngModel)] = "empdetails.emp_photo">
+                    </div>
+                
+                    
+                    <div>
+                    <label for="emp_dob"> Date of Birth : </label>
+                    <input type="date"class="form-control"  name="emp_dob" id="emp_dob" #emp_dob [(ngModel)] = "empdetails.emp_dob"> 
+                    </div>
+
+               
+
+                    <div>
+                    <label for="emp_doj"> Date of Joining : </label>
+                    <input type="date"  class="form-control" name="emp_doj" id="emp_doj" #emp_doj [(ngModel)] = "empdetails.emp_doj">
+                    </div>
+                
+                    <div>
+                    <label for="emp_department_id"> Department no: </label>
+                    <input type="number" class="form-control" name="emp_department_id" id="emp_department_id" #emp_doj [(ngModel)] = "empdetails.department.department_id">
+                    </div>
+               
+                    <div>
+                    <label for="emp_securityque"> Security Question : </label>
+                    <input type="text" class="form-control" name="emp_securityque" id="emp_securityque" #emp_securityque [(ngModel)] = "empdetails.emp_securityque">
+                    </div>
+            
+            </div>
+            <button type="submit" class= btn-primary value="Register">Submit </button>
+            <!--<button class= btn-primary (click)= register(empdetails)> Submit </button>-->
+        </div>
+</form>   
+
+
+<!--
+      <h3>Registration Form</h3>
+            <div class="form-group" >               
+                    <div>
+                    <label for="emp_fname"> First Name : </label>
+                    <input type="text" class="form-control" name="emp_fname" id="emp_fname" #emp_fname="ngModel" [(ngModel)] = "empdetails.emp_fname">
+                    <div *ngIf="f.submitted && emp_fname.invalid">
+                        <div *ngIf="emp_fname.errors.required">
+                        <span style="color: red">First Name is compulsory</span>
+                        </div>
+                    </div>
+                
+                
+                
+                    </div>
+                
+               
+                    <div>
+                    <label for="emp_lname"> Last Name : </label>
+                    <input type="text" class="form-control" name="emp_lname" id="emp_lname" #emp_lname="ngModel" [(ngModel)] = "empdetails.emp_lname">
+                    <div *ngIf="f.submitted && emp_lname.invalid">
+                        <div *ngIf="emp_lname.errors.required">
+                        <span style="color: red">Last Name is compulsory</span>
+                        </div>
+                    </div>    
+                </div>
+               
+                    <div>
+                    <label for="emp_designation"> Designation : </label>
+                    <input type="text" class="form-control" name="emp_designation" id="emp_designation" #emp_designation= [(ngModel)] = "empdetails.emp_designation">
+                    <div *ngIf="f.submitted && emp_lname.invalid">
+                        <div *ngIf="emp_lname.errors.required">
+                        <span style="color: red">Last Name is compulsory</span>
+                        </div>
+                    </div>     
+                </div>
+                
+                    <div>
+                        <label for="emp_password"> Password : </label>
+                        <input type="text" class="form-control"  name="emp_password" id="emp_password" #emp_password [(ngModel)] = "empdetails.emp_password" required minlength="6">
+                        <div *ngIf="r.submitted && emp_password.invalid">
+                            <div *ngIf="emp_password.errors.required">
+                                Password is compulsory.
+                            </div>
+                            <div *ngIf="emp_password.errors.minlength">
+                                Min length is 3 charractor.
+                            </div>
+                        </div>   
+                     </div>
+
+-->

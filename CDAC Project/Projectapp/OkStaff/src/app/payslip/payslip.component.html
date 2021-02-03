@@ -1,0 +1,79 @@
+<div class="container">
+<label>Employee id:</label>
+<input text="number" name="empid" #empid/>
+
+<div>
+<button class= "btn-success mt-2 mr-2" (click)= "insertpaySlip(empid.value)">Generate Payslip</button>
+<button class= "btn-success mt-2 mr-2" (click)= "getPayslip(empid.value)">Show Payslip</button>
+</div>
+<hr/>
+<div class="panel panel-info">
+    <div class="panel-body">
+        <h2>EMPLOYEE PAYSLIP</h2>
+        <p> 
+            Id: {{empdetails.emp_id}}<br/>
+            Name :{{empdetails.emp_fname}} {{empdetails.emp_lname}}<br/>
+            Date of Joining :{{empdetails.emp_doj}}<br/>
+            Working Days :{{payslip.payslip_workingdays}}<br/>
+            Payslip Date: {{payslip.payslip_date}}<br/>
+            CTC :{{salary.salary_ctc}}<br/>
+            Monthly Salary: {{salary.salary_monthly_sal}}<br/>
+            Net Salary:{{payslip.payslip_salary}}<br/>
+            Professional Tax:{{salary.salary_proftax}}<br/>
+            Provident Funds:{{salary.salary_PF}}<br/>
+        
+        </p>
+    </div>
+</div>
+</div>
+
+
+
+
+<!--
+<form>
+    <div class="form-group">
+       <label for="emp_id">Employee Id:</label>
+       <input type="text" name="emp_id" required>
+       <button class= btn-primary> Search</button>
+    </div>
+    <div>
+        <div class="form-group">
+            <label for="emp_fname"> First Name : </label>
+            <input type="text" name="emp_fname"  >
+
+            <label for="emp_leaves_count"> Leaves Count : </label>
+            <input type="text" name="emp_lname" >
+        </div>
+    </div>
+    <div>
+        <div class="form-group">
+            <label for="emp_sal">Net Salary : </label>
+            <input type="text" name="emp_sal" >
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="generatesal">Generate Salary</label>
+        <input type="number">
+   </div>
+   <div>
+    <div class="form-group">
+        <label for="sal_monthly_sal"> Monthly Salary : </label>
+        <input type="text" name="sal_monthly_sal" id="sal_monthlysal" #salary_monthly_sal [(ngModel)] = "salary.salary_monthly_sal">
+
+        <label for="sal_ctc"> CTC : </label>
+        <input type="text" name="salary_ctc" id="salary_ctc" #salary_ctc  [(ngModel)] = "salary.salary_ctc">
+    </div>
+
+    <div>
+    <div class="form-group">
+        <label for="pay"> payslip_date : </label>
+        <input type="text" name="sal_monthly_sal" id="sal_monthlysal" #salary_monthly_sal [(ngModel)] ="payslip.payslip_emp_id">
+
+        <label for="sal_ctc"> payslip  : </label>
+        <input type="text" name="salary_ctc" id="salary_ctc" #salary_ctc  [(ngModel)] = "payslip.payslip_date">
+    </div>
+</div>
+</form>
+</div>-->
+

@@ -1,0 +1,28 @@
+<div class="container border border-primary">
+<form #f = ngForm>
+    <div >
+        <div class="form-group">
+            <label >Employee Id: </label>
+            <input type="text" class="form-control" name="salary_emp_id" id="salary_emp_id" #id  required>
+            <button class= "btn-primary" (click)= "getSalaryById(id.value)">Search</button>
+        </div>
+        <div class="form-group">
+            <label for="sal_ctc"> Salary CTC: </label>
+            <input type="text" class="form-control" name="salary_ctc" id="salary_ctc" #salary_ctc  [(ngModel)] = "salary.salary_ctc">
+        </div>
+        <div class="form-group">
+            <label for="salary_monthly_sal"> Monthly Salary:  </label>
+            <input type="text" class="form-control" name="salary_monthly_sal" id="salary_monthly_sal" #salary_monthly_sal [(ngModel)] = "salary.salary_monthly_sal">
+        </div>
+        <div class="form-group">
+            <label for="salary_PF"> Provident Fund:  </label>
+            <input type="text"class="form-control"  name="salary_PF" id="salary_PF" #salary_PF [(ngModel)] = "salary.salary_PF">
+        </div>
+        <div class="form-group">
+            <label for="salary_proftax"> Professional Tax:  </label>
+            <input type="text" class="form-control" name="salary_proftax" id="salary_proftax" #salary_monthly_sal [(ngModel)] = "salary.salary_proftax">
+        </div>
+    </div>
+    <button class="btn-primary" (click)= "updateSalary(salary)"> Update </button>
+</form>
+</div>

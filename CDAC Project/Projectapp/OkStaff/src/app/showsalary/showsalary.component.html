@@ -1,0 +1,25 @@
+<div class="container">
+    <form #f = ngForm>
+        <div class="form-group">
+            <label >Employee Id:</label>
+            <input type="text" class="form-control" name="salary_emp_id" id="salary_emp_id" #id  required>
+            <button class= btn-primary (click)= "getOnlySalaryById(id.value)">Search</button>
+        </div>
+        <div>
+                <label for="sal_ctc"> Salary CTC : </label>
+                <input type="text" class="form-control" name="salary_ctc" id="salary_ctc" #salary_ctc  [(ngModel)] = "salary.salary_ctc" disabled>   
+        </div>
+        <div class="form-group">
+            <label for="salary_monthly_sal"> Monthly Salary: </label>
+            <input type="text" class="form-control" name="salary_monthly_sal" id="salary_monthly_sal" #salary_monthly_sal [(ngModel)] = "salary.salary_monthly_sal" disabled>
+        </div>
+        <div>
+            <label for="sal_ctc"> Professional Tax : </label>
+            <input type="text" class="form-control" name="salary_proftax" id="salary_proftax" #salary_tax  [(ngModel)] = "salary.salary_proftax" disabled>   
+    </div>
+    <div>
+        <label for="sal_ctc"> Provident Fund : </label>
+        <input type="text" class="form-control" name="salary_pf" id="salary_pf" #salary_pf  [(ngModel)] = "salary.salary_PF" disabled>   
+</div>
+    </form>
+</div>

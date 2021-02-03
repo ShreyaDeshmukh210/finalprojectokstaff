@@ -1,0 +1,20 @@
+<div class="container panel panel-default">
+    <div class="panel panel-info">
+        <label>Employee id:</label>
+        <input text="number" name="empid" #empid/>
+        <button class= btn-primary (click)= "getEmployeeById(empid.value)">Search</button>
+        <hr/>
+            <div class="panel-body">
+            <h3>Employee Information</h3>
+            <p> 
+                    ID:{{empdetails.emp_id}}<br/>
+                    First Name:{{empdetails.emp_fname}}<br/>
+                    Middle Name:{{empdetails.emp_mname}} <br/>
+                    Last Name:{{empdetails.emp_lname}} <br/>
+                    Department Name:{{empdetails.department.department_name}} <br/>
+                    Salary :{{salary.salary_ctc}}<br/>
+                    Monthly Salary :{{salary.salary_monthly_sal}}<br/>
+            </p>
+            </div>
+    </div>
+</div>

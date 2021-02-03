@@ -1,0 +1,65 @@
+package com.example.demo.services;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.example.demo.entities.LeaveTransaction;
+import com.example.demo.repository.LeaveRepository;
+
+@Service
+public class LeaveService 
+{
+	@Autowired
+	LeaveRepository leaverepository;
+	
+	public LeaveTransaction getLeave(int emp_id)
+	{
+	
+		Optional<LeaveTransaction> leave =  leaverepository.findById(emp_id) ;
+		LeaveTransaction leavetransaction=null;
+	    try
+	    {
+	    	leavetransaction=leave.get();
+	    }
+	    catch (NoSuchElementException e) 
+	    {
+			leavetransaction=null;
+		}
+		return leavetransaction;
+	}
+	
+
+	public void leaveInsert(LeaveTransaction leavetransaction)
+	{
+		leaverepository.save(leavetransaction);
+	}
+	
+	
+	
+	public List<LeaveTransaction> getLeaves()
+	{
+		return leaverepository.findAll();
+	}
+	
+	
+	//count
+	public int  getAllLeave(int empid)
+	{
+		int count=0;
+		List<LeaveTransaction> leaves = getLeaves();
+		System.out.println(leaves);
+		List<Integer> allempid=new ArrayList<Integer>();
+		
+		for (LeaveTransaction lt : leaves)  
+			{
+				allempid.add(lt.getEmployee().getEmp_id());
+				count++;	
+			}
+		System.out.println(allempid);
+		return count;
+	}
+}
+
+    

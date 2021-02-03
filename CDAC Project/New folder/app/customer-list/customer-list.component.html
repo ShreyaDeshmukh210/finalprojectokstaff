@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="car-header">
+        <h4>List of Customers</h4>
+    </div>
+    <div class="card-body">
+        <table class="table table-stripped table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Customer Id</th>
+                    <th>Customer Name</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <tr *ngFor="let customer of customers; let index = index">
+                    <td>{{index + 1}}</td>
+                    <td>{{customer['customer_id']}}</td>
+                    <td>{{customer['customer_name']}}</td>
+                    <td>{{customer['username']}}</td>
+                    <td>{{customer['password']}}</td>
+                    <td>{{customer['address']}}</td>
+                    <td>{{customer['phone_number']}}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+
+<body background="src/images.jpg">
+<div class="container">
+ <h3>Login</h3>
+<form [formGroup]="loginForm">
+    <input type="text" name="emp_id" id="emp_id" class="form-control" placeholder="Enter UserId" formControlName="emp_id" required/> <br/>
+    <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" formControlName="password" required/> <br/>
+   
+        <label>Designation : </label>
+        <select name="emp_designation" id="emp_designation" formControlName="emp_designation">
+        <option value="admin">Admin</option>
+        <option value="employee">Employee</option>
+        <option value="manager">Manager</option>
+        </select>
+        <div>
+            <button  class="btn btn-primary"(click)="checkLogin()"> Log In </button>
+        </div>
+    <div>
+        <br/>
+        <br/>
+        <br/>
+<a href="/register" >New Registration?</a>
+</div>
+</form>
+</div>
+</body>

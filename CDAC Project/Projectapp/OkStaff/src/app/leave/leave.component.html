@@ -1,0 +1,38 @@
+<form #f="ngForm" (ngSubmit)=insertLeave(leave) >
+    <div class="container">
+        <div class="form-group">
+            <div >
+                <label>Employee Id:</label>
+                <input type="number" class="form-control" name="empid"  [(ngModel)] = leave.empdetails.emp_id>
+            </div>
+
+            <div>
+                <label for="leavetype">Select Leave Type</label>
+                <input id="sl" type="radio" name="leave"  [(ngModel)]=leave.leave_sick_leave  value="true"> Sick Leave
+                <input id="cl" type="radio" name="leave"  [(ngModel)]=leave.leave_casual_leave  value="leave.leave_casual_leave"> Casual Leave
+            </div>
+    
+        <div >
+            <label for="formDate">From Date : </label>
+            <input type="date" class="form-control" name="fromdate" #fromdate required [(ngModel)]=leave.leave_fromdate>
+            
+            <label for="toDate">To Date : </label>
+            <input type="date" class="form-control" name="todate"  #todate required [(ngModel)]=leave.todate>
+        </div>
+
+        <div >
+            <label for="description">Description</label>
+            <textarea id="description" name="description" #description [(ngModel)]=leave.description ></textarea>
+        </div>
+        </div>
+       
+    </div>
+        <input class=" btn btn-primary" type="submit" value=Apply/>
+   
+</form>
+<br/>
+<br/>
+
+
+
+

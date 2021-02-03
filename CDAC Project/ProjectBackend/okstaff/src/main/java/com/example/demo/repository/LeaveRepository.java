@@ -1,0 +1,41 @@
+package com.example.demo.repository;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.entities.LeaveTransaction;
+
+
+@Repository
+public interface LeaveRepository extends JpaRepository<LeaveTransaction, Integer>
+{
+	
+	@Query(value="select * from leave_transaction  ",nativeQuery = true)
+	public List<LeaveTransaction> getAllEmployeeLeave();
+	
+	@Transactional
+	@Modifying
+	@Query
+	(value="insert into leave_transaction (leave_emp_id, leave_sick_leave, leave_casual_leave, leave_todate, leave_fromdate, leave_description) "
+			+ "values(:empid,:sick,:casual,:todate,:fromdate,:desc)",nativeQuery = true)
+    public void insertLeave(@Param("empid")Integer empid,@Param("sick")String sick,@Param("casual")String casual,@Param("todate")String todate,@Param("fromdate")String fromdate,@Param("desc")String desc);
+	
+	
+
+	
+
+	@Transactional
+	@Modifying
+	@Query
+	(value=" update leave_transaction l set l.leave_description = :desc where l.leave_emp_id = :empid",nativeQuery = true)
+    public void updateLeaveDesc(@Param("empid")Integer empid,@Param("desc")String desc);
+	
+}
